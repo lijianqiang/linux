@@ -47,7 +47,7 @@
    > apt-get install rubygems-integration
    > gem install redis    （等一会）
    
-   > redis-3.2.4/src/redis-trib.rb create --replicas 
+   > redis-3.2.4/src/redis-trib.rb create --replicas （回车了）
       1 120.77.16.193:7000 120.77.16.193:7001 120.77.16.193:7002  120.77.16.193:7003  120.77.16.193:7004  120.77.16.193:7005
    
    说明：--replicas  1  表示 自动为每一个master节点分配一个slave节点   
@@ -65,8 +65,9 @@
 
 
 5. via http://www.linuxidc.com/Linux/2015-08/121845.htm
+       http://www.cnblogs.com/tankaixiong/articles/4022646.html
    
-   common.conf里绑定了ip
+   注意：common.conf里绑定了ip
    
    
 
