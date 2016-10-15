@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #open filepath
-#/usr/local/bin/into
+#/usr/local/bin/into   chmod a+x into
 #like into.sh
 
 echo 'open' $*
