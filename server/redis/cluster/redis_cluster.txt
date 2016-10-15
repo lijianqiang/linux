@@ -1,3 +1,5 @@
+## 本例一台机器上部6个节点。（2机各3节点，3机个2节点）
+
 1. 下载和解包
 
   > cp redis-3.2.4.tar.gz /data/redis_cluster/
