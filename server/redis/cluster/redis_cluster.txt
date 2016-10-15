@@ -1,6 +1,6 @@
 1. 下载和解包
 
-  > cp redis-3.2.4.tar.gz /data/redis_cluster
+  > cp redis-3.2.4.tar.gz /data/redis_cluster/
 
   > tar -zxvf redis-3.2.4.tar.gz
 
@@ -8,7 +8,7 @@
 
 2. 编译安装
 
-   > cd redis-3.2.4
+   > cd redis-3.2.4/
 
    > make && make install
 
@@ -18,15 +18,15 @@
    单机6个节点，3主3从
    > cd /data/redis_cluster/
    > ls
-   : nodes  redis-3.2.4
+   : bin/  nodes/  redis-3.2.4/ 
    
-   > cd nodes
+   > cd nodes/
    > ls 
-   : 7000 7001 7002 7003 7004 7005  redis-common.conf
+   : 7000/  7001/  7002/  7003/  7004/  7005/  redis-common.conf
    创建6个文件夹和一个公共配置文件
   
    
-   > cd 7000
+   > cd 7000/
    > ls
    : redis.conf
 
