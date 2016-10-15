@@ -1,0 +1,76 @@
+1. 下载和解包
+
+  cp redis-3.2.4.tar.gz /data/redis_cluster
+
+  tar -zxvf redis-3.2.4.tar.gz
+
+
+2. 编译安装
+
+   >cd redis-3.2.4
+
+   >make && make install
+
+3. 创建redis节点
+   单机6个节点，3主3从
+   >cd /data/redis_cluster/
+   >ls
+   : nodes  redis-3.2.4
+   
+   >cd nodes
+   >ls 
+   : 7000 7001 7002 7003 7004 7005  redis-common.conf
+   
+   >cd 7000
+   >ls
+   :redis.conf
+
+   >redis-3.2.4/src/redis-server /data/redis_cluster/nodes/7000/redis.conf  (依次执行)
+   >ps -ef | grep redis
+   :
+   root      5167     1  0 16:20 ?        00:00:03 redis-3.2.4/src/redis-server 120.77.16.193:7000 [cluster]             
+   root      5179     1  0 16:21 ?        00:00:03 redis-3.2.4/src/redis-server 120.77.16.193:7001 [cluster]             
+   root      5183     1  0 16:21 ?        00:00:03 redis-3.2.4/src/redis-server 120.77.16.193:7002 [cluster]             
+   root      5187     1  0 16:21 ?        00:00:03 redis-3.2.4/src/redis-server 120.77.16.193:7003 [cluster]             
+   root      5191     1  0 16:21 ?        00:00:03 redis-3.2.4/src/redis-server 120.77.16.193:7004 [cluster]             
+   root      5195     1  0 16:21 ?        00:00:03 redis-3.2.4/src/redis-server 120.77.16.193:7005 [cluster]
+
+
+   ## redis.conf
+   include /data/redis_cluster/nodes/redis-common.conf
+   port 7000
+   cluster-enabled yes
+   cluster-config-file /data/redis_cluster/nodes/7000/nodes-7000.conf
+   cluster-node-timeout 3000
+   cluster-require-full-coverage no
+   appendonly yes
+   pidfile /data/redis_cluster/nodes/7000/redis.pid
+   logfile "/data/redis_cluster/nodes/7000/redis.log"
+   // 还可以调整log，建个文件夹放到一起
+   
+
+
+4. 创建集群
+   >apt-get install ruby
+   >apt-get install rubygems-integration
+   >gem install redis    （等一会）
+   
+   >src/redis-trib.rb create --replicas 
+    1 120.77.16.193:7000 120.77.16.193:7001 120.77.16.193:7002  120.77.16.193:7003  120.77.16.193:7004  120.77.16.193:7005
+   
+   说明：--replicas  1  表示 自动为每一个master节点分配一个slave节点   
+        上面有6个节点，程序会按照一定规则生成 3个master（主）3个slave(从)
+        运行中，提示Can I set the above configuration? (type 'yes' to accept): yes    //输入yes
+
+   ok
+    
+   检查
+   >redis-3.2.4/src/redis-trib.rb check 120.77.16.193:7000
+
+   测试
+   >redis-3.2.4/src/redis-cli -c -h 120.77.16.193 -p 7000  只有加了-c参数，才能开启redis cluster 模式
+
+
+
+5. via http://www.linuxidc.com/Linux/2015-08/121845.htm
+
