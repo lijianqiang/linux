@@ -65,4 +65,8 @@
 
 
 5. via http://www.linuxidc.com/Linux/2015-08/121845.htm
+   
+   common.conf里绑定了ip
+   
+   
 
