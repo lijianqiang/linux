@@ -1,0 +1,9 @@
+#!/bin/bash
+
+#open filepath
+#/usr/local/bin/into
+#like into.sh
+
+echo 'open' $*
+
+nautilus $*
