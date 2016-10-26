@@ -1,0 +1,6 @@
+## setup with a generic binary distribution
+
+0. before
+  shell> pwd
+  shell> /app/
+    
