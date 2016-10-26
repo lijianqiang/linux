@@ -55,8 +55,8 @@
   -------------------------------
          my.cnf
   
-  shell>$ cp /app/mysql/support-files/mysql.server /etc/init.d/mysql
-  shell>$ vim /etc/init.d/mysql
+  shell>$ cp /app/mysql/support-files/mysql.server /etc/init.d/mysqld
+  shell>$ vim /etc/init.d/mysqld
   --------------------------------
           basedir=/app/mysql
           datadir=/app/mysql/data
