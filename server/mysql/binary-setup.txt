@@ -43,11 +43,11 @@
   
   ##其他
   #添加系统路径
-  shell> vim /etc/profile
+  shell>$ vim /etc/profile
   添加：
   export PATH=/app/mysql/bin:$PATH
  
-  shell> source /etc/profile
+  shell>$ source /etc/profile
   
   #开机启动
   shell>$ cp /app/mysql/support-files/my-default.cnf /etc/my.cnf
@@ -55,14 +55,14 @@
   -------------------------------
          my.cnf
   
-  
-  
   shell>$ cp /app/mysql/support-files/mysql.server /etc/init.d/mysql
   shell>$ vim /etc/init.d/mysql
   --------------------------------
           basedir=/app/mysql
           datadir=/app/mysql/data
   --------------------------------
+  
+  #finished
   
   
   
