@@ -58,6 +58,7 @@
   shell>$ cp /app/mysql/support-files/mysql.server /etc/init.d/mysqld
   shell>$ vim /etc/init.d/mysqld
   --------------------------------
+          user=root
           basedir=/app/mysql
           datadir=/app/mysql/data
   --------------------------------
