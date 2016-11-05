@@ -2,19 +2,19 @@
 tomcat-8.0.38
 
 ## 路径
-tomcat/
-    bin/
-    conf/
-    lib/
+tomcat/  
+    bin/  
+    conf/  
+    lib/  
 
 ## conf内容增加
--jmaven_8080.properties
--jmaven_8080.xml
+- jmaven_8080.properties  
+- jmaven_8080.xml  
 
 ## bin内容
--移动jar到lib中，清除sh并增加
--execute.sh
--jmaven_8080.sh
+- 移动jar到lib中，清除sh并增加  
+- execute.sh  
+- jmaven_8080.sh  
 
 ## 启动
 ./jmaven_8080.sh start
