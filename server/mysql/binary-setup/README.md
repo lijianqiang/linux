@@ -6,7 +6,7 @@
 - datadir=/app/mysql/data
 - user = root
 - group = root
-不新建组和用户简单配制
+> 不新建组和用户简单配制
 
 ##### 准备
   shell>$ pwd  
@@ -27,34 +27,34 @@
   shell>$ bin/mysqld --initialize --user=root --basedir=/app/mysql --datadir=/app/mysql/data  
   shell>: ...  
   shell>: [Note] A temporary password is generated for root@localhost: p17p>qrr5Msp  
-  此处需要注意记录生成的临时密码，如上文：p17p>qrr5Msp    
+> 此处需要注意记录生成的临时密码，如上文：p17p>qrr5Msp    
   
   shell>$ bin/mysql_ssl_rsa_setup  --datadir=/app/mysql/data  
   shell>: ...  
-  可以忽略  
+> 可以忽略  
   
   shell>$ bin/mysqld_safe --user=root &  
   shell>: 2016-10-26T09:02:49.502483Z mysqld_safe Starting mysqld daemon with databases from /app/mysql/data  
   shell>$ ps -ef | grep mysql  
   
-###### 启动完成，然后登陆修改root密码  
+##### 启动完成，然后登陆修改root密码  
   
   shell>$ bin/mysql -uroot -p  
   Enter password: p17p>qrr5Msp  
   
   mysql> set password=password('permit');  
   mysql> show databases;  
-  完成  
+> 完成  
   
-###### 其他 
+##### 其他 
   添加系统路径  
   shell>$ vim /etc/profile  
-  添加：  
-  export PATH=/app/mysql/bin:$PATH  
+> 添加：  
+> export PATH=/app/mysql/bin:$PATH  
  
   shell>$ source /etc/profile  
   
-##### 开机启动
+#### 开机启动
   shell>$ cp /app/mysql/support-files/my-default.cnf /etc/my.cnf
   shell>$ vim /etc/my.cnf
   -------------------------------
