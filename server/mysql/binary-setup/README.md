@@ -6,10 +6,9 @@
 - datadir=/app/mysql/data
 - user = root
 - group = root
+不新建组和用户简单配制
 
-
-### 不新建组和用户简单配置 
-  ##### 准备
+##### 准备
   shell>$ pwd  
   shell>: /app/  
   shell>$ ls  
@@ -23,7 +22,7 @@
   shell>$ ls  
   shell>: bin/  COPYING  docs/  include/  lib/  man/  README  share/  support-files/  data/  
   
-  ##### 开始配置
+##### 开始配置
   
   shell>$ bin/mysqld --initialize --user=root --basedir=/app/mysql --datadir=/app/mysql/data  
   shell>: ...  
@@ -38,7 +37,7 @@
   shell>: 2016-10-26T09:02:49.502483Z mysqld_safe Starting mysqld daemon with databases from /app/mysql/data  
   shell>$ ps -ef | grep mysql  
   
-  ###### 启动完成，然后登陆修改root密码  
+###### 启动完成，然后登陆修改root密码  
   
   shell>$ bin/mysql -uroot -p  
   Enter password: p17p>qrr5Msp  
@@ -47,7 +46,7 @@
   mysql> show databases;  
   完成  
   
-  ###### 其他 
+###### 其他 
   添加系统路径  
   shell>$ vim /etc/profile  
   添加：  
@@ -55,7 +54,7 @@
  
   shell>$ source /etc/profile  
   
-  ##### 开机启动
+##### 开机启动
   shell>$ cp /app/mysql/support-files/my-default.cnf /etc/my.cnf
   shell>$ vim /etc/my.cnf
   -------------------------------
@@ -71,7 +70,7 @@
   
   finished
   
-  ##### ref
+##### ref
     http://www.jb51.net/article/87160.htm
     http://dev.mysql.com/doc/refman/8.0/en/binary-installation.html
   
