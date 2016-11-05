@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Server port="8005" shutdown="SHUTDOWN">
+  <Listener className="org.apache.catalina.core.AprLifecycleListener" SSLEngine="off" />
+  <!--Listener className="org.apache.catalina.core.JasperListener" /-->
+  <Listener className="org.apache.catalina.core.JreMemoryLeakPreventionListener" />
+  <Listener className="org.apache.catalina.mbeans.GlobalResourcesLifecycleListener" />
+  <Listener className="org.apache.catalina.core.ThreadLocalLeakPreventionListener" />
+
+  <Service name="Catalina">
+    <Executor name="tomcatThreadPool" namePrefix="catalina-exec-" maxThreads="4000" minSpareThreads="10"/>
+
+  <Connector	 executor="tomcatThreadPool" port="8080" protocol="HTTP/1.1"  maxHttpHeaderSize="8192" useBodyEncodingForURI="true" acceptCount="4096" keepAliveTimeout="60000"  maxKeepAliveRequests="256" enableLookups="false" connectionTimeout="20000" disableUploadTimeout="true" URIEncoding="UTF-8" compression="off" compressionMinSize="500"  compressableMimeType="application/json"/>
+               
+     
+    
+    <Engine name="Catalina" defaultHost="localhost">
+    
+    
+      <Host name="localhost"  appBase="webapps" unpackWARs="false" autoDeploy="false">
+            <Context path="/" docBase="/home/lijianqiang/tomcat_lab/jmaven" reloadable="false" crossContext="false" privileged="true" workDir="work/jmaven8080"/>        
+      </Host>
+    </Engine>
+  </Service>
+</Server>
