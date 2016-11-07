@@ -3,8 +3,8 @@
 zoo_sample.cfg
 
 
-> `# The number of milliseconds of each tick`
-tickTime=2000
+> `# The number of milliseconds of each tick  
+tickTime=2000  
 `# The number of ticks that the initial` 
 `# synchronization phase can take`
 initLimit=10`
