@@ -1,33 +1,37 @@
-1、去Zookeeper官网下载最新版本的Zookeeper.
+##1、去Zookeeper官网下载最新版本的Zookeeper.
 
-[root@localhost zookeeper-cluster]# pwd
-/data/zookeeper-cluster
-[root@localhost zookeeper-cluster]# ls
-zookeeper-3.4.6.tar.gz
-[root@localhost zookeeper-cluster]#
-[root@localhost zookeeper-cluster]# tar -zxvf zookeeper-3.4.6.tar.gz
-#创建第一个集群节点
-[root@localhost zookeeper-cluster]# mv zookeeper-3.4.6 zookeeper-3.4.6-node1
-[root@localhost zookeeper-cluster]# cd zookeeper-3.4.6-node1
-[root@localhost zookeeper-3.4.6-node1]# pwd
-/data/zookeeper-cluster/zookeeper-3.4.6-node1
-#创建数据存放路径
-[root@localhost zookeeper-3.4.6-node1]# mkdir data
-[root@localhost zookeeper-3.4.6-node1]# cd ../
-#创建第二第三个集群节点
-[root@localhost zookeeper-cluster]# cp zookeeper-3.4.6-node1 zookeeper-3.4.6-node2 -R
-[root@localhost zookeeper-cluster]# cp zookeeper-3.4.6-node1 zookeeper-3.4.6-node3 -R
-[root@localhost zookeeper-cluster]# ls
-zookeeper-3.4.6-node1  zookeeper-3.4.6-node2  zookeeper-3.4.6-node3  zookeeper-3.4.6.tar.gz
-[root@localhost zookeeper-cluster]# cd zookeeper-3.4.6-node1/conf/
-[root@localhost conf]# ls
-configuration.xsl  log4j.properties  zoo_sample.cfg
-#创建zoo.cfg文件
+[root@localhost zookeeper-cluster]# pwd  
+/data/zookeeper-cluster  
+[root@localhost zookeeper-cluster]# ls  
+zookeeper-3.4.6.tar.gz  
+[root@localhost zookeeper-cluster]#  
+[root@localhost zookeeper-cluster]# tar -zxvf zookeeper-3.4.6.tar.gz  
+
+###创建第一个集群节点
+[root@localhost zookeeper-cluster]# mv zookeeper-3.4.6 zookeeper-3.4.6-node1  
+[root@localhost zookeeper-cluster]# cd zookeeper-3.4.6-node1  
+[root@localhost zookeeper-3.4.6-node1]# pwd  
+/data/zookeeper-cluster/zookeeper-3.4.6-node1  
+
+###创建数据存放路径
+[root@localhost zookeeper-3.4.6-node1]# mkdir data  
+[root@localhost zookeeper-3.4.6-node1]# cd ../  
+
+###创建第二第三个集群节点
+[root@localhost zookeeper-cluster]# cp zookeeper-3.4.6-node1 zookeeper-3.4.6-node2 -R  
+[root@localhost zookeeper-cluster]# cp zookeeper-3.4.6-node1 zookeeper-3.4.6-node3 -R  
+[root@localhost zookeeper-cluster]# ls  
+zookeeper-3.4.6-node1  zookeeper-3.4.6-node2  zookeeper-3.4.6-node3  zookeeper-3.4.6.tar.gz  
+[root@localhost zookeeper-cluster]# cd zookeeper-3.4.6-node1/conf/  
+[root@localhost conf]# ls  
+configuration.xsl  log4j.properties  zoo_sample.cfg  
+
+###创建zoo.cfg文件
 [root@localhost conf]# cp zoo_sample.cfg zoo.cfg
 
-2、配置zoo.cfg文件:
+##2、配置zoo.cfg文件:
 
-#zookeeper-3.4.6-node1的配置
+###zookeeper-3.4.6-node1的配置
 tickTime=2000
 initLimit=10
 syncLimit=5
@@ -37,7 +41,7 @@ server.1=localhost:2887:3887
 server.2=localhost:2888:3888
 server.3=localhost:2889:3889
 
-#zookeeper-3.4.6-node2的配置
+###zookeeper-3.4.6-node2的配置
 tickTime=2000
 initLimit=10
 syncLimit=5
@@ -47,7 +51,7 @@ server.1=localhost:2887:3887
 server.2=localhost:2888:3888
 server.3=localhost:2889:3889
 
-#zookeeper-3.4.6-node3的配置
+###zookeeper-3.4.6-node3的配置
 tickTime=2000
 initLimit=10
 syncLimit=5
@@ -58,7 +62,7 @@ server.2=localhost:2888:3888
 server.3=localhost:2889:3889
 
 
-3、创建ServerID标识
+##3、创建ServerID标识
 
 除了修改zoo.cfg配置文件,集群模式下还要配置一个文件myid,
 这个文件在dataDir目录下,这个文件里面就有一个数据就是A的值,在上面配置文件中zoo.cfg中配置的dataDir路径中创建myid文件
@@ -70,7 +74,7 @@ server.3=localhost:2889:3889
 [root@localhost zookeeper-cluster]# cat /data/zookeeper-cluster/zookeeper-3.4.6-node3/data/myid
 3
 
-4、启动zookeeper
+##4、启动zookeeper
 
 [root@localhost zookeeper-cluster]# /data/zookeeper-cluster/zookeeper-3.4.6-node1/bin/zkServer.sh start
 JMX enabled by default
@@ -85,7 +89,7 @@ JMX enabled by default
 Using config: /data/zookeeper-cluster/zookeeper-3.4.6-node3/bin/../conf/zoo.cfg
 Starting zookeeper ... STARTED
 
-5、检测集群是否启动
+##5、检测集群是否启动
 
 [root@localhost zookeeper-cluster]# echo stat|nc localhost 2181
 [root@localhost zookeeper-cluster]# echo stat|nc localhost 2182
@@ -97,7 +101,7 @@ Starting zookeeper ... STARTED
 
 
 
-参数说明:
+##参数说明:
 
 tickTime=2000:
 tickTime这个时间是作为Zookeeper服务器之间或客户端与服务器之间维持心跳的时间间隔,也就是每个tickTime时间就会发送一个心跳；
