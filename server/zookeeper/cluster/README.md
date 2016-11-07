@@ -32,81 +32,78 @@ configuration.xsl  log4j.properties  zoo_sample.cfg
 ##2、配置zoo.cfg文件:
 
 ###zookeeper-3.4.6-node1的配置
-tickTime=2000
-initLimit=10
-syncLimit=5
-clientPort=2181
-dataDir=/data/zookeeper-cluster/zookeeper-3.4.6-node1/data
-server.1=localhost:2887:3887
-server.2=localhost:2888:3888
-server.3=localhost:2889:3889
+tickTime=2000  
+initLimit=10  
+syncLimit=5  
+clientPort=2181  
+dataDir=/data/zookeeper-cluster/zookeeper-3.4.6-node1/data  
+server.1=localhost:2887:3887  
+server.2=localhost:2888:3888  
+server.3=localhost:2889:3889  
 
 ###zookeeper-3.4.6-node2的配置
-tickTime=2000
-initLimit=10
-syncLimit=5
-clientPort=2182
-dataDir=/data/zookeeper-cluster/zookeeper-3.4.6-node2/data
-server.1=localhost:2887:3887
-server.2=localhost:2888:3888
-server.3=localhost:2889:3889
+tickTime=2000  
+initLimit=10  
+syncLimit=5  
+clientPort=2182  
+dataDir=/data/zookeeper-cluster/zookeeper-3.4.6-node2/data  
+server.1=localhost:2887:3887  
+server.2=localhost:2888:3888  
+server.3=localhost:2889:3889  
 
 ###zookeeper-3.4.6-node3的配置
-tickTime=2000
-initLimit=10
-syncLimit=5
-clientPort=2183
-dataDir=/data/zookeeper-cluster/zookeeper-3.4.6-node3/data
-server.1=localhost:2887:3887
-server.2=localhost:2888:3888
-server.3=localhost:2889:3889
+tickTime=2000  
+initLimit=10  
+syncLimit=5  
+clientPort=2183  
+dataDir=/data/zookeeper-cluster/zookeeper-3.4.6-node3/data  
+server.1=localhost:2887:3887  
+server.2=localhost:2888:3888  
+server.3=localhost:2889:3889  
 
 
 ##3、创建ServerID标识
 
-除了修改zoo.cfg配置文件,集群模式下还要配置一个文件myid,
-这个文件在dataDir目录下,这个文件里面就有一个数据就是A的值,在上面配置文件中zoo.cfg中配置的dataDir路径中创建myid文件
+除了修改zoo.cfg配置文件,集群模式下还要配置一个文件myid,  
+这个文件在dataDir目录下,这个文件里面就有一个数据就是A的值,在上面配置文件中zoo.cfg中配置的dataDir路径中创建myid文件  
 
-[root@localhost zookeeper-cluster]# cat /data/zookeeper-cluster/zookeeper-3.4.6-node1/data/myid
-1
-[root@localhost zookeeper-cluster]# cat /data/zookeeper-cluster/zookeeper-3.4.6-node2/data/myid
-2
-[root@localhost zookeeper-cluster]# cat /data/zookeeper-cluster/zookeeper-3.4.6-node3/data/myid
-3
+[root@localhost zookeeper-cluster]# cat /data/zookeeper-cluster/zookeeper-3.4.6-node1/data/myid1  
+[root@localhost zookeeper-cluster]# cat /data/zookeeper-cluster/zookeeper-3.4.6-node2/data/myid2  
+[root@localhost zookeeper-cluster]# cat /data/zookeeper-cluster/zookeeper-3.4.6-node3/data/myid3  
 
 ##4、启动zookeeper
 
-[root@localhost zookeeper-cluster]# /data/zookeeper-cluster/zookeeper-3.4.6-node1/bin/zkServer.sh start
-JMX enabled by default
-Using config: /data/zookeeper-cluster/zookeeper-3.4.6-node1/bin/../conf/zoo.cfg
-Starting zookeeper ... STARTED
-[root@localhost zookeeper-cluster]# /data/zookeeper-cluster/zookeeper-3.4.6-node2/bin/zkServer.sh start
-JMX enabled by default
-Using config: /data/zookeeper-cluster/zookeeper-3.4.6-node2/bin/../conf/zoo.cfg
-Starting zookeeper ... STARTED
-[root@localhost zookeeper-cluster]# /data/zookeeper-cluster/zookeeper-3.4.6-node3/bin/zkServer.sh start
-JMX enabled by default
-Using config: /data/zookeeper-cluster/zookeeper-3.4.6-node3/bin/../conf/zoo.cfg
-Starting zookeeper ... STARTED
+[root@localhost zookeeper-cluster]# /data/zookeeper-cluster/zookeeper-3.4.6-node1/bin/zkServer.sh start  
+JMX enabled by default  
+Using config: /data/zookeeper-cluster/zookeeper-3.4.6-node1/bin/../conf/zoo.cfg  
+Starting zookeeper ... STARTED  
+[root@localhost zookeeper-cluster]# /data/zookeeper-cluster/zookeeper-3.4.6-node2/bin/zkServer.sh start  
+JMX enabled by default  
+Using config: /data/zookeeper-cluster/zookeeper-3.4.6-node2/bin/../conf/zoo.cfg  
+Starting zookeeper ... STARTED  
+[root@localhost zookeeper-cluster]# /data/zookeeper-cluster/zookeeper-3.4.6-node3/bin/zkServer.sh start  
+JMX enabled by default  
+Using config: /data/zookeeper-cluster/zookeeper-3.4.6-node3/bin/../conf/zoo.cfg  
+Starting zookeeper ... STARTED  
 
 ##5、检测集群是否启动
 
-[root@localhost zookeeper-cluster]# echo stat|nc localhost 2181
-[root@localhost zookeeper-cluster]# echo stat|nc localhost 2182
-[root@localhost zookeeper-cluster]# echo stat|nc localhost 2183
-#或者
-[root@localhost zookeeper-cluster]# /data/zookeeper-cluster/zookeeper-3.4.6-node1/bin/zkCli.sh
-[root@localhost zookeeper-cluster]# /data/zookeeper-cluster/zookeeper-3.4.6-node2/bin/zkCli.sh
-[root@localhost zookeeper-cluster]# /data/zookeeper-cluster/zookeeper-3.4.6-node3/bin/zkCli.sh
+[root@localhost zookeeper-cluster]# echo stat|nc localhost 2181  
+[root@localhost zookeeper-cluster]# echo stat|nc localhost 2182  
+[root@localhost zookeeper-cluster]# echo stat|nc localhost 2183  
+###或者
+[root@localhost zookeeper-cluster]# /data/zookeeper-cluster/zookeeper-3.4.6-node1/bin/zkCli.sh  
+[root@localhost zookeeper-cluster]# /data/zookeeper-cluster/zookeeper-3.4.6-node2/bin/zkCli.sh  
+[root@localhost zookeeper-cluster]# /data/zookeeper-cluster/zookeeper-3.4.6-node3/bin/zkCli.sh  
 
 
 
 ##参数说明:
 
-tickTime=2000:
-tickTime这个时间是作为Zookeeper服务器之间或客户端与服务器之间维持心跳的时间间隔,也就是每个tickTime时间就会发送一个心跳；
+tickTime=2000:  
+tickTime这个时间是作为Zookeeper服务器之间或客户端与服务器之间维持心跳的时间间隔,也就是每个tickTime时间就会发送一个心跳:  
 
-initLimit=10:
+initLimit=10:  
 initLimit这个配置项是用来配置Zookeeper接受客户端初始化连接时最长能忍受多少个心跳时间间隔数。
 （这里所说的客户端不是用户连接Zookeeper服务器的客户端,而是Zookeeper服务器集群中连接到Leader的Follower 服务器）
 当已经超过10个心跳的时间（也就是tickTime）长度后 Zookeeper 服务器还没有收到客户端的返回信息,那么表明这个客户端连接失败。
