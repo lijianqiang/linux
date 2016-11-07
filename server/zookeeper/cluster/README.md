@@ -1,5 +1,5 @@
 # Zookeeper集群配置
-三个节点
+本例配置三个节点
 
 ##1、去Zookeeper官网下载最新版本的Zookeeper.
 
@@ -35,40 +35,40 @@ configuration.xsl  log4j.properties  zoo_sample.cfg
 ##2、配置zoo.cfg文件:
 
 ###zookeeper-3.4.6-node1的配置
-tickTime=2000  
-initLimit=10  
-syncLimit=5  
-clientPort=2181  
-dataDir=/data/zookeeper-cluster/zookeeper-3.4.6-node1/data  
-server.1=localhost:2887:3887  
-server.2=localhost:2888:3888  
-server.3=localhost:2889:3889  
+    tickTime=2000  
+    initLimit=10  
+    syncLimit=5  
+    clientPort=2181  
+    dataDir=/data/zookeeper-cluster/zookeeper-3.4.6-node1/data  
+    server.1=localhost:2887:3887  
+    server.2=localhost:2888:3888  
+    server.3=localhost:2889:3889  
 
 ###zookeeper-3.4.6-node2的配置
-tickTime=2000  
-initLimit=10  
-syncLimit=5  
-clientPort=2182  
-dataDir=/data/zookeeper-cluster/zookeeper-3.4.6-node2/data  
-server.1=localhost:2887:3887  
-server.2=localhost:2888:3888  
+    tickTime=2000  
+    initLimit=10  
+    syncLimit=5  
+    clientPort=2182  
+    dataDir=/data/zookeeper-cluster/zookeeper-3.4.6-node2/data  
+    server.1=localhost:2887:3887  
+    server.2=localhost:2888:3888  
 server.3=localhost:2889:3889  
 
 ###zookeeper-3.4.6-node3的配置
-tickTime=2000  
-initLimit=10  
-syncLimit=5  
-clientPort=2183  
-dataDir=/data/zookeeper-cluster/zookeeper-3.4.6-node3/data  
-server.1=localhost:2887:3887  
-server.2=localhost:2888:3888  
-server.3=localhost:2889:3889  
+    tickTime=2000  
+    initLimit=10  
+    syncLimit=5  
+    clientPort=2183  
+    dataDir=/data/zookeeper-cluster/zookeeper-3.4.6-node3/data  
+    server.1=localhost:2887:3887  
+    server.2=localhost:2888:3888  
+    server.3=localhost:2889:3889  
 
 
 ##3、创建ServerID标识
 
-除了修改zoo.cfg配置文件,集群模式下还要配置一个文件myid,  
-这个文件在dataDir目录下,这个文件里面就有一个数据就是A的值,在上面配置文件中zoo.cfg中配置的dataDir路径中创建myid文件  
+> 除了修改zoo.cfg配置文件,集群模式下还要配置一个文件myid,  
+> 这个文件在dataDir目录下,这个文件里面就有一个数据就是A的值,在上面配置文件中zoo.cfg中配置的dataDir路径中创建myid文件  
 
 [root@localhost zookeeper-cluster]# cat /data/zookeeper-cluster/zookeeper-3.4.6-node1/data/myid1  
 [root@localhost zookeeper-cluster]# cat /data/zookeeper-cluster/zookeeper-3.4.6-node2/data/myid2  
