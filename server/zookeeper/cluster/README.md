@@ -52,7 +52,7 @@ configuration.xsl  log4j.properties  zoo_sample.cfg
     dataDir=/data/zookeeper-cluster/zookeeper-3.4.6-node2/data  
     server.1=localhost:2887:3887  
     server.2=localhost:2888:3888  
-server.3=localhost:2889:3889  
+    server.3=localhost:2889:3889  
 
 ###zookeeper-3.4.6-node3的配置
     tickTime=2000  
