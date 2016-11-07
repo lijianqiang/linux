@@ -1,3 +1,6 @@
+# Zookeeper集群配置
+三个节点
+
 ##1、去Zookeeper官网下载最新版本的Zookeeper.
 
 [root@localhost zookeeper-cluster]# pwd  
