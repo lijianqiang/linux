@@ -17,6 +17,7 @@ shell> make && make install
 
 ##3. 创建redis节点
 > 单机6个节点，3主3从  
+
 shell> cd /data/redis_cluster/  
 shell> ls  
 : bin/  nodes/  redis-3.2.4/  
@@ -33,15 +34,16 @@ shell> ls
 : redis.conf  
 
 > 依次执行下面语句  
+
 shell> redis-3.2.4/src/redis-server /data/redis_cluster/nodes/7000/redis.conf  
 shell> ps -ef | grep redis  
-:  
-- root      5167     1  0 16:20 ?        00:00:03 redis-3.2.4/src/redis-server 120.77.16.193:7000 [cluster]             
-- root      5179     1  0 16:21 ?        00:00:03 redis-3.2.4/src/redis-server 120.77.16.193:7001 [cluster]             
-- root      5183     1  0 16:21 ?        00:00:03 redis-3.2.4/src/redis-server 120.77.16.193:7002 [cluster]             
-- root      5187     1  0 16:21 ?        00:00:03 redis-3.2.4/src/redis-server 120.77.16.193:7003 [cluster]             
-- root      5191     1  0 16:21 ?        00:00:03 redis-3.2.4/src/redis-server 120.77.16.193:7004 [cluster]             
-- root      5195     1  0 16:21 ?        00:00:03 redis-3.2.4/src/redis-server 120.77.16.193:7005 [cluster]
+
+> root      5167     1  0 16:20 ?        00:00:03 redis-3.2.4/src/redis-server 120.77.16.193:7000 [cluster]             
+> root      5179     1  0 16:21 ?        00:00:03 redis-3.2.4/src/redis-server 120.77.16.193:7001 [cluster]             
+> root      5183     1  0 16:21 ?        00:00:03 redis-3.2.4/src/redis-server 120.77.16.193:7002 [cluster]             
+> root      5187     1  0 16:21 ?        00:00:03 redis-3.2.4/src/redis-server 120.77.16.193:7003 [cluster]             
+> root      5191     1  0 16:21 ?        00:00:03 redis-3.2.4/src/redis-server 120.77.16.193:7004 [cluster]             
+> root      5195     1  0 16:21 ?        00:00:03 redis-3.2.4/src/redis-server 120.77.16.193:7005 [cluster]
    
 
 
@@ -54,7 +56,8 @@ shell> redis-3.2.4/src/redis-trib.rb create --replicas 1 120.77.16.193:7000 120.
 #####说明：  
 > --replicas  1  表示 自动为每一个master节点分配一个slave节点  
 > 上面有6个节点，程序会按照一定规则生成 3个master（主）3个slave(从)
-> 运行中，提示Can I set the above configuration? (type 'yes' to accept): yes    //输入yes
+> 运行中，提示Can I set the above configuration? (type 'yes' to accept): yes    
+> 输入yes
 
 ##### ok
     
