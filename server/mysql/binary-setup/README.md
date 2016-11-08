@@ -104,11 +104,18 @@ shell>$ source /etc/profile
   shell>$ vim /etc/init.d/mysqld  
 
 - - -
-          user=root
           basedir=/app/mysql
           datadir=/app/mysql/data
   
-  finished
+##### ubuntu 14.04
+  shell>$ update-rc.d mysqld defaults
+
+##### linux
+  chmod 755 /etc/init.d/mysqld  
+  chkconfig --add mysqld  
+  chkconfig --level 345 mysqld on  
+
+##### finished
   
 ### ref
     http://www.jb51.net/article/87160.htm
