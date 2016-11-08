@@ -109,6 +109,7 @@ shell>$ source /etc/profile
   
 ##### ubuntu 14.04
   shell>$ update-rc.d mysqld defaults
+> 移除MySQL的开机服务执行 update-rc.d mysqld remove
 
 ##### linux
   chmod 755 /etc/init.d/mysqld  
