@@ -1,4 +1,4 @@
-1. 命令安装
+﻿1. 命令安装
 #可以使用apt-get方式安装，也可以下载源代码安装【1】，我们这里使用apt-git安装。
 #但由于直接使用 sudo apt-get install git 安装的版本较老，因此我们参考【2】中给出的PPA源。
 sudo add-apt-repository ppa:git-core/ppa
