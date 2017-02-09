@@ -4,18 +4,18 @@
 
 
 ## 1.写个eclipse.sh
-
+文件
 
 ## 2.新建eclipse.desktop
-`[Desktop Entry]  
-Name=Eclipse  
-Comment=Eclipse SDK  
-Encoding=UTF-8  
-Exec=/opt/eclipse/eclipse.sh  
-Icon=/opt/eclipse/icon.xpm  
-Terminal=false  
-Type=Application  
-Categories=Application;Development;`
+> [Desktop Entry]  
+> Name=Eclipse  
+> Comment=Eclipse SDK  
+> Encoding=UTF-8  
+> Exec=/opt/eclipse/eclipse.sh  
+> Icon=/opt/eclipse/icon.xpm  
+> Terminal=false  
+> Type=Application  
+> Categories=Application;Development;
 
 
 ## 3.安装subclipse
