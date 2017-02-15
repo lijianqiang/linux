@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE module PUBLIC "-//Puppy Crawl//DTD Check Configuration 1.3//EN" "http://www.puppycrawl.com/dtds/configuration_1_3.dtd">
+
+<!--
+    This configuration file was written by the eclipse-cs plugin configuration editor
+-->
+<!--
+    Checkstyle-Configuration: dialye
+    Description: none
+-->
+<module name="Checker">
+  <property name="severity" value="error"/>
+  <module name="TreeWalker">
+    <module name="AvoidStarImport"/>
+    <module name="RedundantImport"/>
+    <module name="UnusedImports"/>
+    <module name="PackageName">
+      <property name="format" value="^[a-z]+(\.[a-z][a-z0-9]*)*$"/>
+    </module>
+    <module name="JavadocMethod"/>
+    <module name="JavadocType">
+      <property name="scope" value="public"/>
+      <property name="allowUnknownTags" value="true"/>
+    </module>
+    <module name="JavadocVariable"/>
+    <module name="JavadocStyle">
+      <property name="checkEmptyJavadoc" value="true"/>
+      <property name="checkFirstSentence" value="false"/>
+      <property name="checkHtml" value="false"/>
+    </module>
+    <module name="ConstantName">
+      <property name="format" value="(^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$)|(^logger$)"/>
+    </module>
+    <module name="MemberName"/>
+    <module name="MethodName"/>
+    <module name="StaticVariableName"/>
+    <module name="TypeName"/>
+    <module name="LineLength">
+      <property name="ignorePattern" value="^ *\* *[^ ]+$"/>
+      <property name="max" value="150"/>
+    </module>
+    <module name="ParameterNumber">
+      <property name="max" value="10"/>
+    </module>
+    <module name="ModifierOrder"/>
+    <module name="NestedTryDepth">
+      <property name="max" value="0"/>
+    </module>
+    <module name="ModifiedControlVariable"/>
+    <module name="RedundantThrows">
+      <property name="severity" value="warning"/>
+    </module>
+    <module name="AvoidNestedBlocks"/>
+    <module name="EmptyBlock">
+      <property name="tokens" value="LITERAL_CATCH,LITERAL_DO,LITERAL_ELSE,LITERAL_FINALLY,LITERAL_FOR,LITERAL_IF,STATIC_INIT,LITERAL_TRY,LITERAL_WHILE"/>
+    </module>
+    <module name="NeedBraces"/>
+    <module name="LeftCurly"/>
+    <module name="RightCurly"/>
+    <module name="InnerAssignment">
+      <property name="severity" value="warning"/>
+      <property name="tokens" value="ASSIGN,PLUS_ASSIGN,MINUS_ASSIGN"/>
+    </module>
+    <module name="MagicNumber">
+      <property name="severity" value="warning"/>
+    </module>
+    <module name="MissingSwitchDefault"/>
+    <module name="StringLiteralEquality"/>
+    <module name="SuperClone"/>
+    <module name="NestedIfDepth">
+      <property name="max" value="5"/>
+    </module>
+    <module name="NestedForDepth">
+      <property name="max" value="3"/>
+    </module>
+    <module name="FinalClass"/>
+    <module name="BooleanExpressionComplexity">
+      <property name="max" value="7"/>
+    </module>
+    <module name="MethodParamPad"/>
+    <module name="TypecastParenPad"/>
+    <module name="OneStatementPerLine"/>
+    <module name="AvoidInlineConditionals">
+      <property name="severity" value="warning"/>
+    </module>
+    <module name="NoWhitespaceBefore"/>
+    <module name="NoWhitespaceAfter"/>
+    <module name="ParenPad"/>
+    <module name="WhitespaceAround"/>
+    <module name="TodoComment">
+      <property name="format" value="TODO"/>
+    </module>
+    <module name="TodoComment">
+      <property name="format" value="FIXME"/>
+    </module>
+    <module name="ArrayTypeStyle"/>
+    <module name="MultipleStringLiterals"/>
+    <module name="ClassTypeParameterName">
+      <property name="format" value="^[T]$"/>
+    </module>
+    <module name="LocalVariableName">
+      <property name="tokens" value="PARAMETER_DEF,VARIABLE_DEF"/>
+    </module>
+    <module name="NoFinalizer"/>
+    <module name="MissingSwitchDefault"/>
+    <module name="ThrowsCount"/>
+    <module name="HiddenField">
+      <property name="ignoreConstructorParameter" value="true"/>
+      <property name="ignoreSetter" value="true"/>
+    </module>
+    <module name="MutableException"/>
+    <module name="NestedIfDepth">
+      <property name="max" value="2"/>
+    </module>
+    <module name="NestedForDepth">
+      <property name="max" value="2"/>
+    </module>
+    <module name="OneStatementPerLine"/>
+    <module name="EmptyStatement"/>
+    <module name="MissingDeprecated"/>
+    <module name="AnonInnerLength"/>
+    <module name="MethodLength">
+      <property name="tokens" value="CTOR_DEF,METHOD_DEF"/>
+    </module>
+    <module name="UpperEll"/>
+    <module name="VisibilityModifier"/>
+    <module name="DeclarationOrder"/>
+    <module name="InterfaceIsType"/>
+  </module>
+  <module name="FileTabCharacter"/>
+  <module name="RegexpSingleline">
+    <property name="severity" value="warning"/>
+    <property name="format" value="System\.exit\("/>
+    <property name="message" value="bad practice of use System.exit"/>
+  </module>
+  <module name="RegexpSingleline">
+    <property name="severity" value="warning"/>
+    <property name="format" value="System\.(out)|(err)\.print(ln)?\("/>
+    <property name="message" value="bad practice of System.out.print or System.err.print"/>
+  </module>
+  <module name="RegexpSingleline">
+    <property name="severity" value="warning"/>
+    <property name="format" value="\.printStacktrace()"/>
+    <property name="message" value="bad practice of ex.printStacktrace()"/>
+  </module>
+  <module name="FileLength"/>
+</module>
