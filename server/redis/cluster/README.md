@@ -48,12 +48,16 @@ shell> ps -ef | grep redis
 
 
 ##4. 创建集群
-安装类库  
+安装类库
+
 > ubuntu
+
 shell> apt-get install ruby  
 shell> apt-get install rubygems-integration  
 shell> gem install redis
+
 > centos
+
 shell> yum -y install ruby ruby-devel rubygems rpm-build  
 shell> gem intsall redis  
 
