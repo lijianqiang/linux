@@ -48,9 +48,15 @@ shell> ps -ef | grep redis
 
 
 ##4. 创建集群
+安装类库  
+    ubuntu
 shell> apt-get install ruby  
 shell> apt-get install rubygems-integration  
-shell> gem install redis  
+shell> gem install redis
+    centos
+shell> yum -y install ruby ruby-devel rubygems rpm-build  
+shell> gem intsall redis  
+
 shell> redis-3.2.4/src/redis-trib.rb create --replicas 1 120.77.16.193:7000 120.77.16.193:7001 120.77.16.193:7002  120.77.16.193:7003  120.77.16.193:7004  120.77.16.193:7005  
    
 #####说明：  
