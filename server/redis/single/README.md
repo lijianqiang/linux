@@ -1,8 +1,8 @@
-# 单机安装
+# redis单实例
 
 ### 解压安装
     mv redis-xxx.tar.gz /data/program  
-    tar redis-xxx.tar.gz  
+    tar -zxvf redis-xxx.tar.gz  
     cd redis-xxx
     make && make install
 
