@@ -8,7 +8,7 @@
    打开eclipse中菜单"windows"-->Preferences。  
    选择“java”-->"Code Style" -->"Formatter" ,然后导入。 
 
-3、codetemplates.xml文件，java文件代码模板
+3、codetemplates.xml文件，java文件代码模板   
    打开eclipse中菜单"windows"-->Preferences。 
    选择“java”-->"Code Style" -->"Code Tempaters" ,然后导入。  
    
