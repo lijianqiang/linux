@@ -18,4 +18,7 @@
    
 5、pmd.xml文件，check style规则模板
    打开eclipse中菜单"windows"-->Preferences。
-   选择“PMD”-->"Rules Configuration" ,然后导入。    
+   选择“PMD”-->"Rules Configuration" ,然后导入。   
+   
+6、eclipse.ini参数调优，参照机器内存8G
+   http://www.cnblogs.com/ityouknow/p/5647513.html
