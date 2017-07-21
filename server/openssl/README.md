@@ -8,12 +8,13 @@
 #### 移除老版本  
     mv /usr/bin/openssl /usr/bin/openssl.old  
     mv /usr/include/openssl /usr/include/openssl.old
+    mv /etc/ssl /etc/ssl.old
 
 #### 编译  
     tar -zxvf openssl-1.1.0f.tar.gz  
     cd openssl-1.1.0f  
-    ./config shared zlib  --prefix=/data/program/openssl  
->shared  
+    ./config shared zlib --prefix=/data/program/openssl  
+>shared 的作用是生成动态链接库
 
     make  
     make install  
@@ -22,20 +23,27 @@
 
 在/etc/profile的最后一行，添加
 > export OPENSSL=/data/program/openssl  
-  export PATH=$OPENSSL/bin:$PATH
+  export PATH=${PATH}:${OPENSSL}/bin
 
     source /etc/profile
 
 
 添加openssl库的软链接  
 
-    ln -s /usr/local/openssl/bin/openssl /usr/bin/openssl  
-    ln -s /usr/local/openssl/include/openssl /usr/include/openssl  
-    ln -sf /usr/local/openssl/lib/libcrypto.so.1.0.0 /lib/libcrypto.so.6  
-    echo "/usr/local/openssl/lib" >>/etc/ld.so.conf  
+    ln -s /data/program/openssl/bin/openssl /usr/bin/openssl  
+    ln -s /data/program/openssl/include/openssl /usr/include/openssl     
+    echo "/data/program/openssl/lib" >>/etc/ld.so.conf  
     ldconfig -v  
 
+> 可选： ln -sf /data/program/openssl/lib/libcrypto.so.1.0.0 /lib/libcrypto.so.6
+
 #### 测试  
+
+重启系统
+
+    reboot
+
+> 是否必须
 
 查看路径  
 
