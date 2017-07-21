@@ -5,6 +5,7 @@
 root@iZ94tgfr5lyZ:/data/key# pwd
 /data/key
 
+#### 生成一个RSA密钥
 root@iZ94tgfr5lyZ:/data/key# openssl genrsa -des3 -out intentplay.key 1024  
 
     Generating RSA private key, 1024 bit long modulus
@@ -14,7 +15,9 @@ root@iZ94tgfr5lyZ:/data/key# openssl genrsa -des3 -out intentplay.key 1024
 
 Enter pass phrase for intentplay.key:  
 Verifying - Enter pass phrase for intentplay.key:  
+> 输入: *permit*
 
+#### 生成一个证书请求
 root@iZ94tgfr5lyZ:/data/key# openssl req -new -key intentplay.key -out intentplay.csr  
 
 Enter pass phrase for intentplay.key:
@@ -38,11 +41,13 @@ Email Address []:admin@intentplay.com
 
 A challenge password []:  
 An optional company name []:
+> 直接回车
 
 root@iZ94tgfr5lyZ:/data/key# ls
 
     intentplay.csr  intentplay.key
 
+#### 拷贝一个不需要输入密码的密钥文件
 root@iZ94tgfr5lyZ:/data/key# openssl rsa -in intentplay.key -out intentplay_nopass.key  
 Enter pass phrase for intentplay.key:  
 
@@ -52,6 +57,7 @@ root@iZ94tgfr5lyZ:/data/key# ls
 
     intentplay.csr  intentplay.key  intentplay_nopass.key
 
+#### 自己签发证书
 root@iZ94tgfr5lyZ:/data/key# openssl x509 -req -days 365 -in intentplay.csr -signkey intentplay.key -out intentplay.crt  
 
     Signature ok
@@ -62,6 +68,7 @@ root@iZ94tgfr5lyZ:/data/key# openssl x509 -req -days 365 -in intentplay.csr -sig
 
 Enter pass phrase for intentplay.key:  
 
+#### 完成
 root@iZ94tgfr5lyZ:/data/key# ls  
 
     intentplay.crt  intentplay.csr  intentplay.key  intentplay_nopass.key
