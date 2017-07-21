@@ -14,11 +14,12 @@
         ssl on;
         ssl_certificate         ssl_key/intentplay.crt;
         ssl_certificate_key     ssl_key/intentplay.key;
-        ssl_ciphers     ALL:!ADH:!EXPORT56:RC4+RSA:+HIGH:+MEDIUM:+LOW:+SSLv2:+EXP;
-        ssl_protocols   TLSv1 TLSv1.1 TLSv1.2 SSLv3;
 
+        ssl_protocols   TLSv1 TLSv1.1 TLSv1.2 SSLv3;
+        ssl_ciphers     HIGH:!aNULL:!MD5;
         ssl_prefer_server_ciphers   on;
-        ssl_session_cache builtin:1000 shared:SSL:10m;
+        ssl_session_cache     builtin:1000 shared:SSL:10m;
+        ssl_session_timeout   10m;
         # ssl end
 
         location / {
