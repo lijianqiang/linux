@@ -1,4 +1,4 @@
-# git安装配置
+# Git安装配置
 
 ## 1. 安装
 > 可以使用apt-get方式安装，也可以下载源代码安装【1】，我们这里使用apt-git安装。
@@ -50,12 +50,12 @@
     ssh -T git@github.com
 
 ## 4. 为GitHub上的Repository提交修改
-（1）git clone已存在GitHub上的Repository。
+（a）git clone已存在GitHub上的Repository。
 > 在新建的~/MyTestFolder目录中
 
     git clone https://github.com/zhchnchn/ZhchnchnTest.git
 
-（2）修改一个文件，然后提交
+（b）修改一个文件，然后提交
 
     vim README.md
     git status
@@ -79,13 +79,13 @@
 
     git remote add origin https://github.com/zhchnchn/ZhchnchnTest.git
 
-（3）之后，需要将修改push到GitHub上
+（c）之后，需要将修改push到GitHub上
 
     git push -u origin master
 
 > 执行该条命令后，会要求输入GitHub账户的用户名和密码。
 
-（4）提交完成后，查看GitHub上的Repository，会发现内容修改成功。
+（d）提交完成后，查看GitHub上的Repository，会发现内容修改成功。
 
 ## Refer
 【1】How To Install Git on Ubuntu 14.04（https://www.digitalocean.com/community/tutorials/how-to-install-git-on-ubuntu-14-04）
