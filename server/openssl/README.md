@@ -1,7 +1,7 @@
 # openssl安装使用
 
 
-## 1.源码安装
+## 源码安装
 #### 下载  
 > 官网地址 https://www.openssl.org/source  
 
@@ -57,6 +57,3 @@
 
     openssl
     openssl> version -a
-
-
-## 2.使用
