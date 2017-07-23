@@ -78,6 +78,7 @@
 然后再次执行
 
     git remote add origin https://github.com/zhchnchn/ZhchnchnTest.git
+    
 
 （c）之后，需要将修改push到GitHub上
 
@@ -86,6 +87,13 @@
 > 执行该条命令后，会要求输入GitHub账户的用户名和密码。
 
 （d）提交完成后，查看GitHub上的Repository，会发现内容修改成功。
+
+
+（e）或者直接
+
+    $ git remote rm origin
+    $ git remote add origin git@github.com:sosout/myblog.git
+    $ git push origin
 
 ## Refer
 【1】How To Install Git on Ubuntu 14.04（https://www.digitalocean.com/community/tutorials/how-to-install-git-on-ubuntu-14-04）
