@@ -16,7 +16,7 @@ https://docs.mongodb.com/manual/tutorial/install-mongodb-on-linux/
 ### 2.配置
 目录创建
   
-    mkdir -p /data/mongo/27017/data  
+    mkdir -p /data/mongo/27017/data  
     mkdir -p /data/mongo/27017/log  
     touch /data/mongo/27017/log/mongodb.log
   
