@@ -1,4 +1,4 @@
-# mongodb set
+# mongodb setup
 
 * 单个实例
 
