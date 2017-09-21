@@ -2,8 +2,8 @@
 
 
 ### 说明
-- basedir=/app/mysql
-- datadir=/app/mysql/data
+- basedir=/data/program/mysql
+- datadir=/data/program/mysql/data
 - user = mysql
 - group = mysql  
 
@@ -11,14 +11,14 @@
 
 ### 解压和路径
   shell>$ pwd  
-  shell>: /app/  
+  shell>: /data/program/  
   shell>$ ls  
   shell>: mysql-5.7.16-linux-glibc2.5-x86_64.tar.gz  
   shell>$ tar -zxvf mysql-5.7.16-linux-glibc2.5-x86_64.tar.gz  
   shell>$ mv mysql-5.7.16-linux-glibc2.5-x86_64 mysql  
   shell>$ cd mysql  
   shell>$ pwd  
-  shell>: /app/mysql/  
+  shell>: /data/program/mysql/  
   shell>$ mkdir data  
   shell>$ ls  
   shell>: bin/  COPYING  docs/  include/  lib/  man/  README  share/  support-files/  data/  
@@ -28,7 +28,7 @@ shell>$ groupadd mysql
 shell>$ useradd -r -g mysql -s /bin/false mysql  
 
 ### 更改目录权限
-shell>$ cd /app/mysql/  
+shell>$ cd /data/program/mysql/  
 shell>$ ls  
 
 	drwxr-xr-x 10 root root   4096 Nov  8 11:17 .  
@@ -64,13 +64,14 @@ shell>$ ls
   
 ### 开始配置
   
-shell>$ bin/mysqld --initialize --user=mysql --basedir=/app/mysql --datadir=/app/mysql/data  
+shell>$ bin/mysql_install_db --user=mysql --basedir=/data/program/mysql --datadir=/data/program/mysql/data
+shell>$ bin/mysqld --initialize --user=mysql --basedir=/data/program/mysql --datadir=/data/program/mysql/data  
 shell>: ...  +g!eckSb0hj/  
 shell>: [Note] A temporary password is generated for root@localhost: p17p>qrr5Msp  
 
 > 此处需要注意记录生成的临时密码，如上文：p17p>qrr5Msp    
   
-  shell>$ bin/mysql_ssl_rsa_setup  --datadir=/app/mysql/data  
+  shell>$ bin/mysql_ssl_rsa_setup  --datadir=/data/program/mysql/data  
   shell>: ...  
 
 > 可以忽略  
@@ -78,7 +79,7 @@ shell>: [Note] A temporary password is generated for root@localhost: p17p>qrr5Ms
 ### 启动
   
   shell>$ bin/mysqld_safe --user=mysql &  
-  shell>: 2016-10-26T09:02:49.502483Z mysqld_safe Starting mysqld daemon with databases from /app/mysql/data  
+  shell>: 2016-10-26T09:02:49.502483Z mysqld_safe Starting mysqld daemon with databases from /data/program/mysql/data  
   shell>$ ps -ef | grep mysql  
   
 ### 登陆修改root密码  
@@ -94,21 +95,21 @@ shell>: [Note] A temporary password is generated for root@localhost: p17p>qrr5Ms
 添加系统路径  
 shell>$ vim /etc/profile  
   	添加：  
-	export PATH=/app/mysql/bin:$PATH  
+	export PATH=/data/program/mysql/bin:$PATH  
  
 shell>$ source /etc/profile  
   
 ### 开机启动
-  shell>$ cp /app/mysql/support-files/my-default.cnf /etc/my.cnf  
+  shell>$ cp /data/program/mysql/support-files/my-default.cnf /etc/my.cnf  
   shell>$ vim /etc/my.cnf  
 
          my.cnf
   
-  shell>$ cp /app/mysql/support-files/mysql.server /etc/init.d/mysqld  
+  shell>$ cp /data/program/mysql/support-files/mysql.server /etc/init.d/mysqld  
   shell>$ vim /etc/init.d/mysqld  
 
-          basedir=/app/mysql
-          datadir=/app/mysql/data
+          basedir=/data/program/mysql
+          datadir=/data/program/mysql/data
   
 ##### ubuntu 14.04
   shell>$ update-rc.d mysqld defaults
