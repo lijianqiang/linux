@@ -64,7 +64,7 @@ shell>$ ls
   
 ### 开始配置
   
-shell>$ bin/mysql_install_db --user=mysql --basedir=/data/program/mysql --datadir=/data/program/mysql/data
+shell>$ bin/mysql_install_db --user=mysql --basedir=/data/program/mysql --datadir=/data/program/mysql/data  
 shell>$ bin/mysqld --initialize --user=mysql --basedir=/data/program/mysql --datadir=/data/program/mysql/data  
 shell>: ...  +g!eckSb0hj/  
 shell>: [Note] A temporary password is generated for root@localhost: p17p>qrr5Msp  
