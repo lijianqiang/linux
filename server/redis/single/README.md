@@ -10,7 +10,7 @@
     make PREFIX=/data/program/redis  // 指定安装路径
     
 ### 启动
-    redis/bin/redis-server redis/conf/redis.conf   // 从redis-xxx里拷贝一份，按实际修改配置
+    redis/bin/redis-server redis/conf/redis.conf install  // 从redis-xxx里拷贝一份，按实际修改配置
 
 ### 其他
     编辑conf文件  
