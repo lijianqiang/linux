@@ -10,7 +10,7 @@
     
     make PREFIX=/data/program/redis install  // 指定安装路径
 
-## 2.路径约定
+## 2.路径约定
     /data/program/redis  
     |------------------/bin
     |------------------/shell
@@ -20,7 +20,7 @@
     |-------------------------------/7000
     |-------------------------------/7001
 
-## 3. 创建redis节点
+## 3.创建redis节点
 > 单机6个节点，3主3从  
 
 shell> cd /data/program/redis/conf/cluster/  
@@ -48,7 +48,7 @@ shell> ps -ef | grep redis
    
 
 
-##4. 创建集群
+## 4.创建集群
 安装类库
 
 > ubuntu
@@ -64,7 +64,7 @@ shell> gem intsall redis
 
 shell> /data/program/redis/bin/redis-trib.rb create --replicas 1 120.77.16.193:7000 120.77.16.193:7001 120.77.16.193:7002  120.77.16.193:7003  120.77.16.193:7004  120.77.16.193:7005  
    
-#####说明：  
+##### 说明：  
 > redis-trib.rb来自原解压包redis-xxx/src  
 > --replicas  1  表示 自动为每一个master节点分配一个slave节点  
 > 上面有6个节点，程序会按照一定规则生成 3个master（主）3个slave(从)
@@ -82,7 +82,7 @@ shell> /data/program/redis/bin/redis-cli -c -h 120.77.16.193 -p 7000
 
 
 
-##5. via 
+## 5. via 
 http://www.linuxidc.com/Linux/2015-08/121845.htm  
 http://www.cnblogs.com/tankaixiong/articles/4022646.html  
    
