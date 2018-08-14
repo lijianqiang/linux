@@ -28,6 +28,11 @@ nohup启动
 ## 3. logstash
 #### 解压即可
 
+#### 插件
+如果你的Logstash没有安装logstash-codec-json_lines插件，通过以下命令安装：
+
+`bin/plugin install logstash-codec-json_lines`
+
 #### 启动配置
 -f 的参数
 
