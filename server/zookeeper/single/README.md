@@ -1,4 +1,4 @@
-#Zookeeper单实例配置
+# Zookeeper单实例配置
 
 zoo_sample.cfg
 
