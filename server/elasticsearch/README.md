@@ -11,6 +11,7 @@
 #### 启动  
 
 bin/elasticsearch      //前台启动
+
 bin/elasticsearch -d   //后台启动
 
 #### 端口
