@@ -25,6 +25,9 @@ bin/elasticsearch -d   //后台启动
 bin/kibana    //前台启动
 nohup启动
 
+#### 端口
+loclahost:5601 //默认
+
 ## 3. logstash
 #### 解压即可
 
