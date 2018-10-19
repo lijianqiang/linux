@@ -6,7 +6,7 @@
 #### 解压即可
 
 #### 用户 
-新建非root用户
+新建非root用户  
 `useradd -g www -s /bin/bash www`
 
 #### 启动  
