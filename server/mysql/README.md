@@ -9,7 +9,7 @@
 ```
 mysql -u root -p   登录数据库
 
-use mysql； 选择基础信息数据库
+use mysql; 选择基础信息数据库
 
 select  User,authentication_string,Host from user 		查询数据库用户，在这里正常来说，应该都localhost
 
