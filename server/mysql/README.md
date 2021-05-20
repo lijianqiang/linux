@@ -28,4 +28,4 @@ flush privileges;  		清除缓存，重新加载权限
  
  /etc/mysql/mysql.conf.d/mysqld.cnf 文件。将其中的
  
- bind-address 注释掉。然后重启数据库，搞定
+ bind-address 改成本机内网地址。然后重启数据库，搞定
