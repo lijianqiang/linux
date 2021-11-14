@@ -82,4 +82,13 @@ rabbitmqctl stop命令把 rabbitmq 以及节点都关闭了，可以使用以下
 $ rabbitmq-server -detached
 ```
 
+## 添加用户
+
+```
+rabbitmqctl add_user admin password
+
+rabbitmqctl set_permissions -p / admin ".*" ".*" ".*"
+
+rabbitmqctl set_user_tags admin administrator
+```
 
