@@ -52,6 +52,12 @@ http://localhost:15672
 
 ## 常用命令
 
+rabbitmq 状态
+
+```
+$ rabbitmqctl status
+```
+
 关闭 rabbitmq （但是没有关闭节点）
 
 ```
