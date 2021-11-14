@@ -46,7 +46,9 @@ $ sudo systemctl restart rabbitmq-server
 
 重启后访问
 
-http://localhost:15672，默认用户名密码：guest/guest
+http://localhost:15672
+
+默认用户名密码：guest/guest
 
 ## 常用命令
 
