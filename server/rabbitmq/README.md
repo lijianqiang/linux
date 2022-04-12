@@ -18,8 +18,15 @@ $ sudo apt-get update
 最后安装Erlang
 
 ```
-$ sudo apt-get install erlang erlang-nox
+$ sudo apt-get install erlang
 ```
+
+可以安装完整的erlang， 它包括Erlang/OTP平台及其所有应用程序。
+```
+可以安装完整的erlang， 它包括Erlang/OTP平台及其所有应用程序。
+```
+
+https://www.cnblogs.com/hshy/p/11096827.html
 
 ## rabbitmq
 
