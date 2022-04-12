@@ -92,3 +92,25 @@ rabbitmqctl set_permissions -p / admin ".*" ".*" ".*"
 rabbitmqctl set_user_tags admin administrator
 ```
 
+## 彻底卸载
+### rabbitmq
+先删除mq
+```
+sudo apt-get remove rabbitmq-server
+```
+
+然后查看依赖, 有ii的继续remove
+```
+dpkg --list|grep rabbitmq
+```
+
+### erlang
+先删除erlang
+```
+sudo apt-get remove erlang
+```
+
+然后查看依赖, 有ii的继续remove
+```
+dpkg --list|grep erlang
+```
