@@ -31,12 +31,18 @@ SHOW VARIABLES WHERE Variable_name LIKE 'character_set_%' OR Variable_name LIKE 
 ```
 mysql -u root -p   登录数据库
 
+
 use mysql; 选择基础信息数据库
 
 select  User,authentication_string,Host from user 		查询数据库用户，在这里正常来说，应该都localhost
 
+v7:
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY 'permit';
 
-GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY 'permit'   
+v8:
+CREATE USER 'root'@'%' IDENTIFIED BY 'permit';
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' WITH GRANT OPTION;
+FLUSH PRIVILEGES;
 ```
 
 新增一个root用户，所有地址（%）的都可以访问，并且密码为`permit` 。这里可以根据你的情况酌情修改
